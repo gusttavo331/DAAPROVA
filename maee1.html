@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria DA | Profº Dyone Alves</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS (CSS) --- */
+        :root {
+            --cor-primaria: #4CAF50; /* Verde estilo Logo DA */
+            --cor-primaria-dark: #388E3C;
+            --cor-texto: #333;
+            --cor-fundo: #f9f9f9;
+            --branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        /* Botão Padrão (CTA) */
+        .btn-cta {
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--cor-primaria-dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- CABEÇALHO --- */
+        header {
+            background: var(--branco);
+            padding: 10px 5%; /* Reduzi levemente o padding para compensar a logo grande */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 90px; /* <--- AQUI ESTÁ A ALTERAÇÃO: Aumentado para 90px */
+            width: auto;
+        }
+
+        /* --- HERO SECTION (DOBRA 1) --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero span {
+            color: var(--cor-primaria);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* --- SOBRE O MENTOR (AUTORIDADE) --- */
+        .mentor-section {
+            padding: 80px 5%;
+            background: var(--branco);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .mentor-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .mentor-img img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .mentor-text {
+            flex: 1;
+        }
+
+        .mentor-text h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .mentor-text h3 {
+            color: var(--cor-primaria);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .mentor-badges {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #e8f5e9;
+            color: var(--cor-primaria-dark);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- O MÉTODO (BENEFÍCIOS) --- */
+        .metodo {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h4 {
+            margin-bottom: 15px;
+            color: var(--cor-primaria);
+            font-size: 1.3rem;
+        }
+
+        /* --- FAQ --- */
+        .faq {
+            padding: 80px 5%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-bottom: 20px;
+            color: #666;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background: #222;
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        /* --- RESPONSIVIDADE (CELULAR) --- */
+        @media (max-width: 768px) {
+            .hero, .mentor-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text, .mentor-text {
+                margin-bottom: 30px;
+            }
+
+            .mentor-img {
+                order: -1;
+                margin-bottom: 20px;
+            }
+            
+            .hero h1 { font-size: 2rem; }
+            
+            /* Ajuste para logo não ficar gigante no celular */
+            .logo img {
+                height: 70px; 
+            }
+        }
+
+        /* Botão Flutuante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="C:\Users\gusta\Downloads\WhatsApp Image 2026-02-11 at 17.56.11.jpeg" alt="Logo DA Mentoria"> 
+        </div>
+         <a href="https://pay.kiwify.com.br/ZSZqR3A" style="font-size: 0.9rem; padding: 10px 20px "class=btn-cta>Garantir Vaga</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Tenha o <span>Planejamento</span> e a Estratégia para sua Aprovação</h1>
+            <p>O método validado por quem é Doutorando, Mestre e já foi aprovado. Domine Português, Redação e saiba exatamente o que estudar todos os dias.</p>
+            <a href="https://pay.kiwify.com.br/ZSZqR3A" class="btn-cta">Quero meu Planejamento</a>
+        </div>
+        <div class="hero-img">
+             </div>
+    </section>
+
+    <section class="mentor-section">
+        <div class="mentor-img">
+            <img src="C:\Users\gusta\Downloads\WhatsApp Image 2026-02-11 at 19.28.13.jpeg" alt="Profº Dyone Alves">
+        </div>
+        <div class="mentor-text">
+            <h2>Profº Dyone Alves</h2>
+            <h3>Autoridade acadêmica e prática</h3>
+            
+            <p>Há mais de 14 anos, transformo a relação dos alunos com a Língua Portuguesa e Redação. Mais do que teoria, entrego o caminho das pedras.</p>
+            <br>
+            <p><strong>Minha autoridade vem do campo de batalha:</strong> Fui aprovado na PM/TO, SEMED Colméia, SEDUC/TO e SEMED Palmas. Eu sei o que o avaliador procura.</p>
+            
+            <div class="mentor-badges">
+                <span class="badge">🎓 Doutorando em Letras</span>
+                <span class="badge">📜 Mestre em Letras</span>
+                <span class="badge">🏆 +10 Pós-Graduações</span>
+            </div>
+            
+            <br>
+            <a href="https://pay.kiwify.com.br/ZSZqR3A" class="btn-cta">Quero aprender com o Mestre</a>
+        </div>
+    </section>
+
+    <section class="metodo">
+        <h2>O que você recebe na Mentoria DA</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h4>Redação Nota Máxima</h4>
+                <p>Estruturas prontas e técnicas de argumentação para nunca mais travar na folha em branco.</p>
+            </div>
+            <div class="card">
+                <h4>Português Estratégico</h4>
+                <p>Aprenda o que realmente cai, sem perder tempo com gramática que a banca não cobra.</p>
+            </div>
+            <div class="card">
+                <h4>Planejamento de Estudos</h4>
+                <p>Cronograma organizado para você saber exatamente o que estudar dia após dia até a prova.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Perguntas Frequentes</h2>
+        
+        <div class="faq-item">
+            <button class="faq-question">A mentoria serve para iniciantes? <span>+</span></button>
+            <div class="faq-answer">Sim! Começamos do absoluto zero, com planejamento passo a passo até o nível avançado.</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Como acesso as aulas e o planejamento? <span>+</span></button>
+            <div class="faq-answer">O acesso é imediato através da plataforma Kiwify assim que o pagamento é confirmado.</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Tem garantia? <span>+</span></button>
+            <div class="faq-answer">Sim, você tem 7 dias de garantia incondicional pela Kiwify.</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mentoria DA - Profº Dyone Alves. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Desenvolvido para Concurseiros de Elite.</p>
+    </footer>
+
+    <a href="https://w.app/wvrqne" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30px">
+    </a>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
